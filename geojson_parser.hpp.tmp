@@ -1,5 +1,8 @@
-#ifndef GEOJSON_PARSER_DETAIL_HPP
-#define GEOJSON_PARSER_DETAIL_HPP
+#ifndef FHAMONIC_GEOJSON_HPP
+#define FHAMONIC_GEOJSON_HPP
+
+#ifndef FHAMONIC_GEOJSON_DETAIL_HPP
+#define FHAMONIC_GEOJSON_DETAIL_HPP
 
 #include <filesystem>
 #include <iostream>
@@ -10,6 +13,7 @@
 
 namespace fhamonic {
 namespace geojson {
+namespace detail {
 
 template <typename Point, typename T>
 Point parse_point(T && t) {
@@ -57,8 +61,7 @@ Multipolygon parse_multipolygon(T && multipolygon) {
 }
 
 template <typename T>
-std::vector<std::pair<std::string, std::string>> parse_tags(
-    T && tags) {
+std::vector<std::pair<std::string, std::string>> parse_tags(T && tags) {
     std::vector<std::pair<std::string, std::string>> prop;
     for(auto p : tags)
         prop.emplace_back(p.unescaped_key().value(),
@@ -68,4 +71,7 @@ std::vector<std::pair<std::string, std::string>> parse_tags(
 
 }  // namespace detail
 }  // namespace geojson
-#endif  // GEOJSON_PARSER_DETAIL_HPP
+}  // namespace fhamonic
+#endif  // FHAMONIC_GEOJSON_DETAIL_HPP
+
+#endif  // FHAMONIC_GEOJSON_HPP

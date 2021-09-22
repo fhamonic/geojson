@@ -24,13 +24,13 @@ test: all
 clean:
 	@rm -rf $(BUILD_DIR)
 
-single-header: single-header/geojson_parser.hpp
+single-header: single-header/fhamonic_geojson.hpp
 
-single-header/geojson_parser.hpp:
-	@python3 -m quom --include_directory include include/all.hpp geojson_parser.hpp.tmp && \
+single-header/fhamonic_geojson.hpp:
+	@python3 -m quom --include_directory include include/all.hpp fhamonic_geojson.hpp.tmp && \
 	mkdir -p single-header && \
-	echo "/*" > single-header/geojson_parser.hpp && \
-	cat LICENSE >> single-header/geojson_parser.hpp && \
-	echo "*/" >> single-header/geojson_parser.hpp && \
-	cat geojson_parser.hpp.tmp >> single-header/geojson_parser.hpp && \
-	rm geojson_parser.hpp.tmp
+	echo "/*" > single-header/fhamonic_geojson.hpp && \
+	cat LICENSE >> single-header/fhamonic_geojson.hpp && \
+	echo "*/" >> single-header/fhamonic_geojson.hpp && \
+	cat fhamonic_geojson.hpp.tmp >> single-header/fhamonic_geojson.hpp && \
+	rm fhamonic_geojson.hpp.tmp
