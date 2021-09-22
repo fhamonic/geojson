@@ -1,4 +1,4 @@
-# GeoJSON Parser
+# GeoJSON
 
 A C++17 library for parsing GeoJSON into Boost::Geometry objects making use of the SIMDJSON library for high efficiency. 
 
