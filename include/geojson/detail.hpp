@@ -69,4 +69,5 @@ std::vector<std::pair<std::string, std::string>> parse_tags(T && tags) {
 }  // namespace detail
 }  // namespace geojson
 }  // namespace fhamonic
+
 #endif  // FHAMONIC_GEOJSON_DETAIL_HPP
